@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线下单系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            background: #fff;
+            padding: 15px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 12px;
+            padding-right: 30px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .important-note {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            input, select, button {
+                font-size: 14px;
+            }
+
+            .important-note {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>在线下单系统</h1>
+        </header>
+
+        <main>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">微信号:</label>
+                    <input type="text" id="name" required placeholder="请输入微信号">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">电话:</label>
+                    <input type="tel" id="phone" required>
+                    <p class="important-note phone-note"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">密码:</label>
+                    <input type="password" id="password" required autocomplete="off">
+                    <p class="important-note password-note"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="product">产品选择:</label>
+                    <select id="product" required>
+                        <option value="" disabled selected>请选择产品（全部1.3元/科）</option>
+                        <option value="product1">学习通视频＋测验 - 单刷视频+测验不考试</option>
+                        <option value="product2">学习通单考试 - 选修95+，必修及格线附近，安全可靠</option>
+                        <option value="product3">学习通全包 - 视频+测验+考试全套服务，强烈推荐</option>
+                        <option value="product4">智慧树全套 - 视频+测验+考试，选修95+，必修及格（不考试请刷完改密码）</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">课程:</label>
+                    <input type="text" id="quantity" required placeholder="请输入课程名称">
+                </div>
+
+                <button type="submit">提交订单</button>
+            </form>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
